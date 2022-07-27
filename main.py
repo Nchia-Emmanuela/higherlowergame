@@ -7,3 +7,6 @@ from game_data import data
 
 def clear():
     os.system('cls')
+
+account_a = random.choice(data)
+account_b = random.choice(data)
