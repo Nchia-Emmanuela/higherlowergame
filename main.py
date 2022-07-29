@@ -23,6 +23,7 @@ def check_answer(guess, a_followers, b_followers):
         return guess == 'b'
 # Display art
 print(logo)
+score = 0
 
 # Generate a random account
 account_a = random.choice(data)
