@@ -27,9 +27,11 @@ score = 0
 
 # make game repeatable
 game_should_continue = True
+account_b = random.choice(data)
+
 while game_should_continue:
 # Generate a random account
-    account_a = random.choice(data)
+    account_a = account_b
     account_b = random.choice(data)
     if account_a == account_b:
         account_b = random.choice(data)
@@ -44,10 +46,11 @@ while game_should_continue:
     b_follower_count = account_b["follower_count"]
 
     is_correct = check_answer(guess, a_follower_count, b_follower_count)
-
+    clear()
     # Giving user feedback
     if is_correct:
         score += 1
         print(f"Your're right! Current score: {score}")
     else:
+        game_should_continue = False
         print(f"Sorry, that's wrong. Finale socre: {score}")
