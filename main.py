@@ -25,25 +25,29 @@ def check_answer(guess, a_followers, b_followers):
 print(logo)
 score = 0
 
+# make game repeatable
+game_should_continue = True
+while game_should_continue:
 # Generate a random account
-account_a = random.choice(data)
-account_b = random.choice(data)
-if account_a == account_b:
+    account_a = random.choice(data)
     account_b = random.choice(data)
+    if account_a == account_b:
+        account_b = random.choice(data)
 
-print(f"Compare A: {format_data(account_a)}")
-print(vs)
-print(f"Against B: {format_data(account_b)}")
+    print(f"Compare A: {format_data(account_a)}")
+    print(vs)
+    print(f"Against B: {format_data(account_b)}")
 
-guess = input("who has more followers? Type 'A' or 'B': ").lower()
+    guess = input("who has more followers? Type 'A' or 'B': ").lower()
 
-a_follower_count = account_a["follower_count"]
-b_follower_count = account_b["follower_count"]
+    a_follower_count = account_a["follower_count"]
+    b_follower_count = account_b["follower_count"]
 
-is_correct = check_answer(guess, a_follower_count, b_follower_count)
+    is_correct = check_answer(guess, a_follower_count, b_follower_count)
 
-# Giving user feedback
-if is_correct:
-    print("Your're right!")
-else:
-    print("Sorry, that's wrong.")
+    # Giving user feedback
+    if is_correct:
+        score += 1
+        print(f"Your're right! Current score: {score}")
+    else:
+        print(f"Sorry, that's wrong. Finale socre: {score}")
