@@ -35,3 +35,6 @@ print(vs)
 print(f"Against B: {format_data(account_b)}")
 
 guess = input("who has more followers? Type 'A' or 'B': ").lower()
+
+a_follower_count = account_a["follower_count"]
+b_follower_count = account_b["follower_count"]
