@@ -15,6 +15,10 @@ def format_data(account):
     account_country = account["country"]
     return f"{account_name}, a {account_descr}, from {account_country}"
 
+# Display art
+print(logo)
+
+# Generate a random account
 account_a = random.choice(data)
 account_b = random.choice(data)
 if account_a == account_b:
